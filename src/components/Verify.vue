@@ -67,6 +67,33 @@
             },
             codeLength: {
                 type: Number
+            },
+            mode: {
+                type: String
+            },
+            vOffset: {
+                type: Number
+            },
+            vSpace: {
+                type: Number
+            },
+            explain: {
+                type: String
+            },
+            imgUrl: {
+                type: String
+            },
+            imgName: {
+                type: Array
+            },
+            imgSize: {
+                type: Object
+            },
+            blockSize: {
+                type: Object
+            },
+            barSize: {
+                type: Object
             }
         },
         data() {

@@ -82,12 +82,12 @@
             },
             imgUrl: {
                 type: String,
-                default: 'images/'
+                default: 'http://via.placeholder.com/'
             },
             imgName: {
                 type: Array,
                 default() {
-                    return ['1.jpg', '2.jpg']
+                    return ['350x150', '350x450']
                 }
             },
             imgSize: {
