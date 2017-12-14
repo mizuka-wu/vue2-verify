@@ -33,7 +33,7 @@
     const _code_color2 = ['#FF0033', '#006699', '#993366', '#FF9900', '#66CC66', '#FF33CC']
 
     export default {
-        name: 'Verify',
+        name: 'VerifyCode',
         props: {
             type: {
                 type: String,
