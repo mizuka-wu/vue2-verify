@@ -1,12 +1,12 @@
 <template>
     <div style="position: relative;"
-         @mouseover="showImage = (true && mode === 'pop')"
-         @mouseout="showImage = false">
+         @mouseover="showImage = true"
+         @mouseout="showImage = true">
         <!-- puzzle的情况 -->
         <div v-if="type === '2'" class="verify-img-out"
              v-show="showImage"
-             @mouseover="showImage = (true && mode === 'pop')"
-             @mouseout="showImage = false"
+             @mouseover="showImage = true"
+             @mouseout="showImage = true"
              :style="{display: mode === 'pop'?'none':undefined,
                       position: mode === 'pop'?'absolute':'relative',
                       height: (parseInt(setSize.imgHeight) + vSpace) + 'px',
@@ -18,7 +18,7 @@
                 <div class="verify-refresh" @click="refresh" v-show="showRefresh"><i class="iconfont icon-refresh"></i>
                 </div>
                 <div class="verify-gap"
-                     :style="{'width': blockSize.width, 'height': blockSize.height, top: top, left: left}"></div>
+                     :style="{'width': blockSize.width, 'height': blockSize.height, top: top + 'px', left: left + 'px'}"></div>
             </div>
         </div>
 
@@ -130,7 +130,7 @@
                 },
                 top: 0,
                 left: 0,
-                showImg: false,
+                showImage: true,
                 moveBlockLeft: undefined,
                 leftBarWidth: undefined,
                 // 移动中样式
@@ -169,33 +169,33 @@
 
                 var _this = this
 
-                window.removeEventListener("touchmove", function(e) {
+                window.removeEventListener("touchmove", function (e) {
                     _this.move(e);
                 });
-                window.removeEventListener("mousemove", function(e) {
-                    _this.move(e);
-                });
-
-                //鼠标松开
-                window.removeEventListener("touchend", function() {
-                    _this.end();
-                });
-                window.removeEventListener("mouseup", function() {
-                    _this.end();
-                });
-
-                window.addEventListener("touchmove", function(e) {
-                    _this.move(e);
-                });
-                window.addEventListener("mousemove", function(e) {
+                window.removeEventListener("mousemove", function (e) {
                     _this.move(e);
                 });
 
                 //鼠标松开
-                window.addEventListener("touchend", function() {
+                window.removeEventListener("touchend", function () {
                     _this.end();
                 });
-                window.addEventListener("mouseup", function() {
+                window.removeEventListener("mouseup", function () {
+                    _this.end();
+                });
+
+                window.addEventListener("touchmove", function (e) {
+                    _this.move(e);
+                });
+                window.addEventListener("mousemove", function (e) {
+                    _this.move(e);
+                });
+
+                //鼠标松开
+                window.addEventListener("touchend", function () {
+                    _this.end();
+                });
+                window.addEventListener("mouseup", function () {
                     _this.end();
                 });
 
@@ -215,9 +215,9 @@
             //鼠标移动
             move: function (e) {
                 if (this.status && this.isEnd == false) {
-                    if (this.mode == 'pop') {
-                        this.showImage = true
-                    }
+//                    if (this.mode == 'pop') {
+//                        this.showImage = true
+//                    }
 
                     if (!e.touches) {    //兼容移动端
                         var x = e.clientX;
@@ -261,29 +261,30 @@
                     if (this.type !== '1') {		//图片滑动
 
                         var vOffset = parseInt(this.vOffset)
-//                        if (parseInt(this.htmlDoms.gap.css('left')) >= (parseInt(this.htmlDoms.move_block.css('left')) - vOffset) && parseInt(this.htmlDoms.gap.css('left')) <= (parseInt(this.htmlDoms.move_block.css('left')) + vOffset)) {
-//                            this.htmlDoms.move_block.css('background-color', '#5cb85c');
+                        if (parseInt(this.left) >= (parseInt((this.moveBlockLeft || '').replace('px', '')) - vOffset) &&
+                            parseInt(this.left) <= (parseInt((this.moveBlockLeft || '').replace('px', '')) + vOffset)) {
+                            this.moveBlockBackgroundColor = '#5cb85c'
 //                            this.htmlDoms.left_bar.css({'border-color': '#5cb85c', 'background-color': '#fff'});
-//                            this.htmlDoms.icon.css('color', '#fff');
-//                            this.htmlDoms.icon.removeClass('icon-right');
-//                            this.htmlDoms.icon.addClass('icon-check');
-//                            this.htmlDoms.refresh.hide();
-//                            this.isEnd = true;
-//                            this.options.success(this);
-//                        } else {
-//                            this.htmlDoms.move_block.css('background-color', '#d9534f');
-//                            this.htmlDoms.left_bar.css('border-color', '#d9534f');
-//                            this.htmlDoms.icon.css('color', '#fff');
-//                            this.htmlDoms.icon.removeClass('icon-right');
-//                            this.htmlDoms.icon.addClass('icon-close');
-//
-//
-//                            setTimeout(function () {
-//                                _this.refresh();
-//                            }, 400);
-//
-//                            this.options.error(this);
-//                        }
+                            this.leftBarBorderColor = '#5cb85c'
+                            this.iconColor = '#fff'
+                            this.iconClass = 'icon-check'
+                            this.showRefresh = false
+                            this.isEnd = true;
+                            this.$parent.$emit('success', this)
+
+                        } else {
+                            this.moveBlockBackgroundColor = '#d9534f'
+                            this.leftBarBorderColor = '#d9534f'
+                            this.iconColor = '#fff'
+                            this.iconClass = 'icon-close'
+
+
+                            setTimeout(function () {
+                                _this.refresh();
+                            }, 400);
+
+                            this.$parent.$emit('error', this)
+                        }
 
                     } else {		//普通滑动
 

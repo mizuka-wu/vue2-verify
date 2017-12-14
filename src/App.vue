@@ -5,7 +5,7 @@
             <Verify @success="alert('success')" @error="alert('error')" :type="1"></Verify>
             <Verify @success="alert('success')" @error="alert('error')" :type="2"></Verify>
             <Verify @success="alert('success')" @error="alert('error')" :type="3"></Verify>
-            <!--<Verify @success="alert('success')" @error="alert('error')" :type="4"></Verify>-->
+            <Verify @success="alert('success')" @error="alert('error')" :type="4"></Verify>
         </div>
     </div>
 </template>

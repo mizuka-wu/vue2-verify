@@ -174,6 +174,14 @@
                             this.verifyType = '1'
                             this.componentType = 'VerifySlide'
                             break
+                        case 'puzzle':
+                            this.verifyType = '2'
+                            this.componentType = 'VerifySlide'
+                            break
+                        case '4':
+                            this.verifyType = '2'
+                            this.componentType = 'VerifySlide'
+                            break
                         default:
                             this.verifyType = undefined
                             this.componentType = undefined
