@@ -28,12 +28,12 @@
                                               'line-height':barSize.height}">
             <span class="verify-msg" v-text="text"></span>
             <div class="verify-left-bar"
-                 :style="{width: (leftBarWidth!==undefined)?leftBarWidth: barSize.height, height: barSize.height, 'border-color': leftBarBorderColor}">
+                 :style="{width: (leftBarWidth!==undefined)?leftBarWidth: barSize.height, height: barSize.height, 'border-color': leftBarBorderColor, transaction: transitionWidth}">
                 <span class="verify-msg"></span>
                 <div class="verify-move-block"
                      @touchstart="start"
                      @mousedown="start"
-                     :style="{width: barSize.height, height: barSize.height, 'background-color': moveBlockBackgroundColor, left: moveBlockLeft}">
+                     :style="{width: barSize.height, height: barSize.height, 'background-color': moveBlockBackgroundColor, left: moveBlockLeft, transition: transitionLeft}">
                     <i :class="['verify-icon iconfont', iconClass]"
                        :style="{color: iconColor}"></i>
                     <div v-if="type === '2'"
@@ -140,7 +140,9 @@
                 iconClass: 'icon-right',
                 status: false,	//鼠标状态
                 isEnd: false,		//是够验证完成
-                showRefresh: true
+                showRefresh: true,
+                transitionLeft: '',
+                transitionWidth: ''
             }
         },
         computed: {
@@ -368,19 +370,17 @@
             refresh: function () {
                 this.showRefresh = true
                 this.text = ''
-//                this.$element.find('.verify-msg:eq(1)').css('color', '#000');
 
-//                this.htmlDoms.move_block.animate({'left':'0px'}, 'fast');
+                this.transitionLeft = 'left .3s'
                 this.moveBlockLeft = 0
 
-//                this.htmlDoms.left_bar.animate({'width': '40px'}, 'fast');
                 this.leftBarWidth = undefined
+                this.transitionWidth = 'width .3s'
 
                 this.leftBarBorderColor = '#ddd'
                 this.moveBlockBackgroundColor = '#fff'
                 this.iconColor = '#000'
                 this.iconClass = 'icon-right'
-                this.text = this.explain
 
                 this.randSet()
                 this.imgRand = Math.floor(Math.random() * this.imgName.length);			//随机的背景图片
@@ -390,6 +390,12 @@
 //                this.$element.find('.verify-sub-block').css({'background-image': 'url('+ this.options.imgUrl +this.options.imgName[this.img_rand]+')', 'background-size': this.setSize.img_width + ' '+ this.setSize.img_height});
 //
                 this.isEnd = false
+
+                setTimeout(() => {
+                    this.transitionWidth = ''
+                    this.transitionLeft = ''
+                    this.text = this.explain
+                }, 300)
             },
 
             //获取left值
