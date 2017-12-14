@@ -4,6 +4,12 @@
         <components v-if="componentType"
                     :is="componentType"
                     :type="verifyType"
+                    :figure="figure"
+                    :arith="arith"
+                    :width="width"
+                    :height="height"
+                    :fontSize="fontSize"
+                    :codeLength="codeLength"
                     ref="instance"></components>
         <!-- 确定按钮容器 -->
         <div @click="checkCode" style="width:0; height:0;">
@@ -19,6 +25,7 @@
      * @description 分发验证码使用
      * */
     import VerifyCode from './Verify/VerifyCode'
+    import VerifySlide from './Verify/VerifySlide'
 
     export default {
         name: 'Vue2Verify',
@@ -42,6 +49,24 @@
                 type: String | Number,
                 require: false,
                 default: 'picture'
+            },
+            figure: {
+                type: Number
+            },
+            arith: {
+                type: Number
+            },
+            width: {
+                type: String
+            },
+            height: {
+                type: String
+            },
+            fontSize: {
+                type: String
+            },
+            codeLength: {
+                type: Number
             }
         },
         data() {
@@ -114,6 +139,14 @@
                             this.verifyType = '2'
                             this.componentType = 'VerifyCode'
                             break
+                        case 'slide':
+                            this.verifyType = '1'
+                            this.componentType = 'VerifySlide'
+                            break
+                        case '3':
+                            this.verifyType = '1'
+                            this.componentType = 'VerifySlide'
+                            break
                         default:
                             this.verifyType = undefined
                             this.componentType = undefined
@@ -123,7 +156,8 @@
             }
         },
         components: {
-            VerifyCode
+            VerifyCode,
+            VerifySlide
         },
         i18n: {
             messages: {
