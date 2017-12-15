@@ -10,6 +10,17 @@
                     :height="height"
                     :fontSize="fontSize"
                     :codeLength="codeLength"
+                    :mode="mode"
+                    :vOffset="vOffset"
+                    :vSpace="vSpace"
+                    :explain="explain"
+                    :imgUrl="imgUrl"
+                    :imgName="imgName"
+                    :imgSize="imgSize"
+                    :blockSize="blockSize"
+                    :barSize="barSize"
+                    :defaultNum="defaultNum"
+                    :checkNum="checkNum"
                     ref="instance"></components>
         <!-- 确定按钮容器 -->
         <div @click="checkCode" style="width:0; height:0;">
@@ -95,6 +106,14 @@
             },
             barSize: {
                 type: Object
+            },
+            //默认的文字数量
+            defaultNum: {
+                type: Number
+            },
+            //校对的文字数量
+            checkNum: {
+                type: Number
             }
         },
         data() {
