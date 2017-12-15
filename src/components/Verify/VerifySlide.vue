@@ -56,6 +56,8 @@
      * VerifySlide
      * @description 滑块
      * */
+    import {resetSize} from '@/lib/util'
+
     export default {
         name: 'VerifySlide',
         props: {
@@ -148,6 +150,9 @@
         computed: {
             barArea() {
                 return this.$el.querySelector('.verify-bar-area')
+            },
+            resetSize() {
+                return resetSize
             }
         },
         methods: {
@@ -322,39 +327,6 @@
 
                     this.status = false;
                 }
-            },
-
-            resetSize: function () {
-                var img_width, img_height, bar_width, bar_height;	//图片的宽度、高度，移动条的宽度、高度
-
-                var parentWidth = this.$el.parentNode.offsetWidth || window.offsetWidth
-                var parentHeight = this.$el.parentNode.offsetHeight || window.offsetHeight
-
-                if (this.imgSize.width.indexOf('%') != -1) {
-                    img_width = parseInt(this.imgSize.width) / 100 * parentWidth + 'px';
-                } else {
-                    img_width = this.imgSize.width;
-                }
-
-                if (this.imgSize.height.indexOf('%') != -1) {
-                    img_height = parseInt(this.imgSize.height) / 100 * parentHeight + 'px';
-                } else {
-                    img_height = this.imgSize.height;
-                }
-
-                if (this.barSize.width.indexOf('%') != -1) {
-                    bar_width = parseInt(this.barSize.width) / 100 * parentWidth + 'px';
-                } else {
-                    bar_width = this.barSize.width;
-                }
-
-                if (this.barSize.height.indexOf('%') != -1) {
-                    bar_height = parseInt(this.barSize.height) / 100 * parentHeight + 'px';
-                } else {
-                    bar_height = this.barSize.height;
-                }
-
-                return {imgWidth: img_width, imgHeight: img_height, barWidth: bar_width, barHeight: bar_height};
             },
 
             //随机出生点位
