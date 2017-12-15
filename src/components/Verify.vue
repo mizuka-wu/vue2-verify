@@ -26,6 +26,7 @@
      * */
     import VerifyCode from './Verify/VerifyCode'
     import VerifySlide from './Verify/VerifySlide'
+    import VerifyPoints from './Verify/VerifyPoints'
 
     export default {
         name: 'Vue2Verify',
@@ -182,6 +183,14 @@
                             this.verifyType = '2'
                             this.componentType = 'VerifySlide'
                             break
+                        case 'pick':
+                            this.verifyType = ''
+                            this.componentType = 'VerifyPoints'
+                            break
+                        case '5':
+                            this.verifyType = ''
+                            this.componentType = 'VerifyPoints'
+                            break
                         default:
                             this.verifyType = undefined
                             this.componentType = undefined
@@ -192,7 +201,8 @@
         },
         components: {
             VerifyCode,
-            VerifySlide
+            VerifySlide,
+            VerifyPoints
         },
         i18n: {
             messages: {

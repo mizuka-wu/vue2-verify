@@ -28,9 +28,7 @@
      * Code
      * @description 常规的图片文字识别或者数字计算
      * */
-    const _code_chars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    const _code_color1 = ['#fffff0', '#f0ffff', '#f0fff0', '#fff0f0']
-    const _code_color2 = ['#FF0033', '#006699', '#993366', '#FF9900', '#66CC66', '#FF33CC']
+    import {_code_chars, _code_color1, _code_color2} from '@/lib/util'
 
     export default {
         name: 'VerifyCode',
