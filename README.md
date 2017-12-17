@@ -18,3 +18,44 @@
 1. 传到npm
 2. 添加在线演示和修改
 
+## 文档
+### 常规验证码picture
+#### 参数说明
+<table >
+<tr>
+<th>参数</th>
+<th>说明</th>
+						    </tr>
+						    <tr>
+						        <td><code>type</code></td>
+						        <td>常规验证码type固定等于1。</td>
+						    </tr>
+						    <tr>
+						        <td><code>width</code></td>
+						        <td>常规验证码的宽,支持百分比形式设置，如：width:100%。</td>
+						    </tr>
+						    <tr>
+						        <td><code>height</code></td>
+						        <td>常规验证码的高,支持百分比形式设置，如：height:10%。</td>
+						    </tr>
+						    <tr>
+						        <td><code>fontSize</code></td>
+						        <td>常规验证码中的字母&amp;数字的字体大小，默认为30px。</td>
+						    </tr>
+						    <tr>
+						        <td><code>codeLength</code></td>
+						        <td>常规验证码中显示的验证码个数，默认为6。</td>
+						    </tr>
+						    <tr>
+						        <td><code>btnId</code></td>
+						        <td>提交按钮的id名称，绑定提交的按钮。</td>
+						    </tr>
+					</table>
+
+
+width	常规验证码的宽,支持百分比形式设置，如：width:100%。
+height	常规验证码的高,支持百分比形式设置，如：height:10%。
+fontSize	常规验证码中的字母&数字的字体大小，默认为30px。
+codeLength	常规验证码中显示的验证码个数，默认为6。
+btnId	提交按钮的id名称，绑定提交的按钮。
+
