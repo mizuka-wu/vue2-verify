@@ -19,6 +19,27 @@
 2. 添加在线演示和修改
 
 ## 文档
+
+### 事件
+<table >
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+<tr>
+<td><code>ready</code></td>
+<td>验证码初始化成功的回调函数。</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td>验证码匹配成功后的回调函数。如要重新初始化：success:function(obj){obj.refresh();}。</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>验证码匹配失败后的回调函数。</td>
+</tr>
+</table>
+
 ### 常规验证码picture
 #### 参数说明
 <table >
@@ -28,7 +49,7 @@
 </tr>
 <tr>
 <td><code>type</code></td>
-<td>常规验证码type为picture或者1</td>
+<td>验证码type为picture或者1</td>
 </tr>
 <tr>
 <td><code>width</code></td>
@@ -58,7 +79,7 @@
 </tr>
 <tr>
 <td><code>type</code></td>
-<td>常规验证码type为compute或者2</td>
+<td>验证码type为compute或者2</td>
 </tr>
 <tr>
 <td><code>figure</code></td>
@@ -82,6 +103,147 @@
 </table>
 
 
+### 滑动验证码
+#### 参数说明
+<table >
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>验证码type为slide或者3</td>
+</tr>
+<tr>
+<td><code>vOffset</code></td>
+<td>滑动验证码的误差量，如：误差量为5px就能完成验证，设置vOffset:5。</td>
+</tr>
+<tr>
+<td><code>explain</code></td>
+<td>滑动条内的提示，不设置默认是：向右滑动完成验证。</td>
+</tr>
+<tr>
+<td><code>barSize</code></td>
+<td>其中包含了width、height两个参数，分别代表滑动条的宽度和高度，支持百分比方式设置，如：{width:'100%',height:'40px'}</td>
+</tr>
+</table>
+
+### 拼图验证码
+#### 参数说明
+<table >
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>验证码type为puzzle或者4</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td>验证码的显示方式，弹出式pop，固定fixed，默认是：mode : 'fixed'。</td>
+</tr>
+<tr>
+<td><code>vOffset</code></td>
+<td>滑动验证码的误差量，默认单位是px。如：误差量为5px就能完成验证，设置vOffset:5。</td>
+</tr>
+<tr>
+<td><code>vSpace</code></td>
+<td>验证码图片和移动条容器的间隔，默认单位是px。如：间隔为5px，设置vSpace:5。</td>
+</tr>
+<tr>
+<td><code>explain</code></td>
+<td>滑动条内的提示，不设置默认是：'向右滑动完成验证'。</td>
+</tr>
+<tr>
+<td><code>imgUrl</code></td>
+<td>背景图片的地址，不设置默认是：'images/'。</td>
+</tr>
+<tr>
+<td><code>imgName</code></td>
+<td>验证码背景图的数组集合，默认从images目录中进行读取，如 ['1.jpg', '2.jpg']。</td>
+</tr>
+<tr>
+<td><code>imgSize</code></td>
+<td>其中包含了width、height两个参数，分别代表图片的宽度和高度，支持百分比方式设置 如:{width:'100%',height:'200px'}。</td>
+</tr>
+<tr>
+<td><code>blockSize</code></td>
+<td>其中包含了width、height两个参数，分别代表拼图块的宽度和高度，如:{width:'40px',height:'40px'}。。</td>
+</tr>
+<tr>
+<td><code>barSize</code></td>
+<td>其中包含了width、height两个参数，分别代表滑动条的宽度和高度，支持百分比方式设置，如:{width:'100%',height:'40px'}</td>
+</tr>
+</table>
+
+### 选字验证码
+#### 参数说明
+<table >
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>验证码type为pick或者5</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td>验证码的显示方式，弹出式pop，固定fixed，默认是：mode : 'fixed'。</td>
+</tr>
+<tr>
+<td><code>defaultNum</code></td>
+<td>验证码中出现的文字数量，如要默认4个字</td>
+</tr>
+<tr>
+<td><code>checkNum</code></td>
+<td>验证码中要求比对的文字数量，如要按序比对2个字</td>
+</tr>
+<tr>
+<td><code>vSpace</code></td>
+<td>验证码图片和移动条容器的间隔，默认单位是px。</td>
+</tr>
+<tr>
+<td><code>imgUrl</code></td>
+<td>背景图片的地址，不设置默认是：'images/'。</td>
+</tr>
+<tr>
+<td><code>imgName</code></td>
+<td>验证码背景图的数组集合，默认从images目录中进行读取，如 ['1.jpg', '2.jpg']。</td>
+</tr>
+<tr>
+<td><code>imgSize</code></td>
+<td>其中包含了width、height两个参数，分别代表图片的宽度和高度，支持百分比方式设置 如:{width:'100%',height:'200px'}。</td>
+</tr>
+<tr>
+<td><code>barSize</code></td>
+<td>其中包含了width、height两个参数，分别代表滑动条的宽度和高度，支持百分比方式设置，如:{width:'100%',height:'40px'}</td>
+</tr>
+</table>
 
 
+```
+// 基础用例
 
+<template>
+      <Verify @success="alert('success')" @error="alert('error')" :type="1"></Verify>
+</template>
+
+
+<script>
+    import Verify from './components/Verify'
+
+    export default {
+        name: 'app',
+        methods: {
+            alert(text) {
+                console.log(text)
+            }
+        },
+        components: {
+            Verify
+        }
+    }
+</script>
+```
