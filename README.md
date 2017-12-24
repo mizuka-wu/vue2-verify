@@ -25,37 +25,63 @@
 <tr>
 <th>参数</th>
 <th>说明</th>
-						    </tr>
-						    <tr>
-						        <td><code>type</code></td>
-						        <td>常规验证码type固定等于1。</td>
-						    </tr>
-						    <tr>
-						        <td><code>width</code></td>
-						        <td>常规验证码的宽,支持百分比形式设置，如：width:100%。</td>
-						    </tr>
-						    <tr>
-						        <td><code>height</code></td>
-						        <td>常规验证码的高,支持百分比形式设置，如：height:10%。</td>
-						    </tr>
-						    <tr>
-						        <td><code>fontSize</code></td>
-						        <td>常规验证码中的字母&amp;数字的字体大小，默认为30px。</td>
-						    </tr>
-						    <tr>
-						        <td><code>codeLength</code></td>
-						        <td>常规验证码中显示的验证码个数，默认为6。</td>
-						    </tr>
-						    <tr>
-						        <td><code>btnId</code></td>
-						        <td>提交按钮的id名称，绑定提交的按钮。</td>
-						    </tr>
-					</table>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>常规验证码type为picture或者1</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>常规验证码的宽,支持百分比形式设置，如：width:100%。</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>常规验证码的高,支持百分比形式设置，如：height:10%。</td>
+</tr>
+<tr>
+<td><code>fontSize</code></td>
+<td>常规验证码中的字母&amp;数字的字体大小，默认为30px。</td>
+</tr>
+<tr>
+<td><code>codeLength</code></td>
+<td>常规验证码中显示的验证码个数，默认为6。</td>
+</tr>
+</table>
 
 
-width	常规验证码的宽,支持百分比形式设置，如：width:100%。
-height	常规验证码的高,支持百分比形式设置，如：height:10%。
-fontSize	常规验证码中的字母&数字的字体大小，默认为30px。
-codeLength	常规验证码中显示的验证码个数，默认为6。
-btnId	提交按钮的id名称，绑定提交的按钮。
+### 运算验证码
+#### 参数说明
+<table >
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>常规验证码type为compute或者2</td>
+</tr>
+<tr>
+<td><code>figure</code></td>
+<td>运算验证码的位数,默认是100以内的数字，即两位数。如果是要设置三位数，则设置figure:1000。</td>
+</tr>
+<tr>
+<td><code>arith</code></td>
+<td>算法选择，支持加、减、乘。设置为1至3分别代表加减乘，0为随机切换。。</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>运算验证码的宽,支持百分比形式设置，如：width:100%。</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>运算验证码的高,支持百分比形式设置，如：height:10%。</td>
+</tr>
+<td><code>fontSize</code></td>
+<td>运算验证码中的数字的字体大小，默认为30px。</td>
+</tr>
+</table>
+
+
+
+
 
