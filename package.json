@@ -12,6 +12,7 @@
   "bugs": {
     "email": "trionfo1993@hotmail.com"
   },
+  "main": "src/components/Verify.vue",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",

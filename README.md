@@ -15,10 +15,11 @@
 > 纯前端是可以被别人绕过验证的!
 
 ## todo
-1. 传到npm
-2. 添加在线演示和修改
+1. 添加在线演示和修改
 
 ## 文档
+### 如何使用
+```npm i vue2-verify```
 
 ### 事件
 <table >
@@ -232,7 +233,7 @@
 
 
 <script>
-    import Verify from './components/Verify'
+    import Verify from 'vue2-verify'
 
     export default {
         name: 'app',
