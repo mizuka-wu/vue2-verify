@@ -56,7 +56,7 @@
      * VerifySlide
      * @description 滑块
      * */
-    import {resetSize} from '@/lib/util'
+    import {resetSize} from '../../lib/util'
 
     export default {
         name: 'VerifySlide',

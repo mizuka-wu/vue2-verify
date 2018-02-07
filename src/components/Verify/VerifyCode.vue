@@ -28,7 +28,7 @@
      * Code
      * @description 常规的图片文字识别或者数字计算
      * */
-    import {_code_chars, _code_color1, _code_color2} from '@/lib/util'
+    import {_code_chars, _code_color1, _code_color2} from '../../lib/util'
 
     export default {
         name: 'VerifyCode',

@@ -53,7 +53,7 @@
      * @description 点选
      * */
 
-    import {resetSize, _code_chars, _code_color1, _code_color2} from '@/lib/util'
+    import {resetSize, _code_chars, _code_color1, _code_color2} from '../../lib/util'
 
     function getOffset(Node, offset = {top: 0, left: 0}) {
         if (Node == document.body) {//当该节点为body节点时，结束递归
