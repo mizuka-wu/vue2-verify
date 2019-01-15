@@ -101,6 +101,10 @@
 <td><code>fontSize</code></td>
 <td>运算验证码中的数字的字体大小，默认为30px。</td>
 </tr>
+<tr>
+<td><code>showButton</code></td>
+<td>是否显示确定按钮，默认为true</td>
+</tr>
 </table>
 
 
@@ -126,6 +130,10 @@
 <tr>
 <td><code>barSize</code></td>
 <td>其中包含了width、height两个参数，分别代表滑动条的宽度和高度，支持百分比方式设置，如：{width:'100%',height:'40px'}</td>
+</tr>
+<tr>
+<td><code>showButton</code></td>
+<td>是否显示确定按钮，默认为true</td>
 </tr>
 </table>
 
@@ -176,6 +184,10 @@
 <td><code>barSize</code></td>
 <td>其中包含了width、height两个参数，分别代表滑动条的宽度和高度，支持百分比方式设置，如:{width:'100%',height:'40px'}</td>
 </tr>
+<tr>
+<td><code>showButton</code></td>
+<td>是否显示确定按钮，默认为true</td>
+</tr>
 </table>
 
 ### 选字验证码
@@ -220,6 +232,10 @@
 <tr>
 <td><code>barSize</code></td>
 <td>其中包含了width、height两个参数，分别代表滑动条的宽度和高度，支持百分比方式设置，如:{width:'100%',height:'40px'}</td>
+</tr>
+<tr>
+<td><code>showButton</code></td>
+<td>是否显示确定按钮，默认为true</td>
 </tr>
 </table>
 

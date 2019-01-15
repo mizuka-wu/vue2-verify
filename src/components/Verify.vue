@@ -16,6 +16,7 @@
                     :explain="explain"
                     :imgUrl="imgUrl"
                     :imgName="imgName"
+                    :showButton="showButton"
                     :imgSize="imgSize"
                     :blockSize="blockSize"
                     :barSize="barSize"
@@ -23,7 +24,7 @@
                     :checkNum="checkNum"
                     ref="instance"></components>
         <!-- 确定按钮容器 -->
-        <div @click="checkCode" style="width:0; height:0;">
+        <div @click="checkCode" v-show="showButton" style="width:0; height:0;">
             <slot name="check">
                 <button class="verify-btn">{{i18n('ok')}}</button>
             </slot>
@@ -114,6 +115,10 @@
             //校对的文字数量
             checkNum: {
                 type: Number
+            },
+            showButton: {
+                type: Boolean,
+                default: true
             }
         },
         data() {
