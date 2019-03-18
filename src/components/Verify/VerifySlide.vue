@@ -29,7 +29,7 @@
             <span class="verify-msg" v-text="text"></span>
             <div class="verify-left-bar"
                  :style="{width: (leftBarWidth!==undefined)?leftBarWidth: barSize.height, height: barSize.height, 'border-color': leftBarBorderColor, transaction: transitionWidth}">
-                <span class="verify-msg"></span>
+                <span class="verify-msg" v-text="finishText"></span>
                 <div class="verify-move-block"
                      @touchstart="start"
                      @mousedown="start"
@@ -239,10 +239,10 @@
 
                     } else {		//普通滑动
                         if (move_block_left >= this.barArea.offsetWidth - parseInt(parseInt(this.barSize.height) / 2) + 3) {
-                            this.text = '松开验证'
+                            this.finishText = '松开验证'
                             move_block_left = this.barArea.offsetWidth - parseInt(parseInt(this.barSize.height) / 2) + 3;
                         } else {
-                            this.text = ''
+                            this.finishText = ''
                         }
                     }
 
@@ -304,11 +304,11 @@
                             this.iconColor = '#fff'
                             this.iconClass = 'icon-check'
                             this.showRefresh = false
-                            this.text = '验证成功'
+                            this.finishText = '验证成功'
                             this.isEnd = true;
                             this.$parent.$emit('success', this)
                         } else {
-                            this.text = ''
+                            this.finishText = ''
                             this.moveBlockBackgroundColor = '#d9534f'
                             this.leftBarBorderColor = '#d9534f'
                             this.iconColor = '#fff'
@@ -316,7 +316,7 @@
                             this.isEnd = true;
 
                             setTimeout(function () {
-                                _this.text = ''
+                                _this.finishText = ''
                                 _this.refresh()
                                 _this.isEnd = false
                             }, 400);
@@ -342,7 +342,7 @@
 
             refresh: function () {
                 this.showRefresh = true
-                this.text = ''
+                this.finishText = ''
 
                 this.transitionLeft = 'left .3s'
                 this.moveBlockLeft = 0
