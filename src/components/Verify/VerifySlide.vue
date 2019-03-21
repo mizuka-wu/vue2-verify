@@ -124,6 +124,7 @@
             return {
                 imgRand: 0,
                 text: '',
+                finishText:'',
                 setSize: {
                     imgHeight: 0,
                     imgWidth: 0,
