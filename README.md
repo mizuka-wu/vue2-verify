@@ -1,5 +1,9 @@
 # vue2-verify
 
+寻求继续维护者
+
+前端做验证码感觉其实意义不是很大，目前也用不上，所以没有继续维护下去的动力了，希望有人可以正常接手
+
 > 基于[https://github.com/Hibear/verify](https://github.com/Hibear/verify) 的验证码项目  
 > 项目验证码类型[请查看](http://veui.net/)
 
